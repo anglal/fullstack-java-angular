@@ -1,6 +1,8 @@
 package noteappbackend.entity;
 
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +17,8 @@ public class NoteEntity{
 	private Integer id;
 	private String title;
 	private String body;
+	private Date dateCreated;
+    private Boolean important;
 	public Integer getId() {
 		return id;
 	}
@@ -33,8 +37,22 @@ public class NoteEntity{
 	public void setBody(String body) {
 		this.body = body;
 	}
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+	public Boolean getImportant() {
+		return important;
+	}
+	public void setImportant(Boolean important) {
+		this.important = important;
+	}
 	@Override
 	public String toString() {
-		return "NoteEntity [id=" + id + ", title=" + title + ", body=" + body + "]";
+		return "NoteEntity [id=" + id + ", title=" + title + ", body=" + body + ", dateCreated=" + dateCreated
+				+ ", important=" + important + "]";
 	}
+	
 }

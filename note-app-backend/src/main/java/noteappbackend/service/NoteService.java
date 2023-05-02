@@ -59,7 +59,11 @@ public class NoteService {
 			}
 			if(null != note.getBody()) {
 				noteFound.setBody(note.getBody());
-			}			
+			}	
+			if(null != note.getImportant()) {
+				noteFound.setImportant(note.getImportant());
+			}
+			
 			NoteEntity returnedNoteEntity = this.noteRepository.save(noteFound);
 			Note returnedNote = new Note();
 			BeanUtils.copyProperties(returnedNoteEntity, returnedNote);

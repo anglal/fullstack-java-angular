@@ -1,8 +1,10 @@
 <div class = "homepage">
     <header><h2>Important Notes Entered</h2></header>
+    <button class ="leftslider material-icons" (click)="leftClick()">arrow_back_ios</button>
     <article>
-        Article
+        {{importantnotes[noteIndex]}}
     </article>
+    <button class ="rightslider material-icons" (click)="rightClick()">arrow_forward_ios </button>
     <footer>
         <p>Notes You've recently entered</p>
     </footer>

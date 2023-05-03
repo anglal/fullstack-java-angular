@@ -2,7 +2,10 @@
     <header><h2>Important Notes Entered</h2></header>
     <button class ="leftslider material-icons" (click)="leftClick()">arrow_back_ios</button>
     <article>
-        {{importantnotes[noteIndex]}}
+        <h2>{{allNotes[noteIndex].title}}</h2><br>
+        <p>{{allNotes[noteIndex].dateCreated}}</p>
+        <p>{{allNotes[noteIndex].body}}</p>
+        
     </article>
     <button class ="rightslider material-icons" (click)="rightClick()">arrow_forward_ios </button>
     <footer>

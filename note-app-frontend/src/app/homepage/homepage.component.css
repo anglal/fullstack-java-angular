@@ -1,5 +1,5 @@
 *{
-    border:1px solid blue;
+    /* border:1px solid blue; */
     padding: 0px;
     box-sizing: border-box;
     margin: 0px;
@@ -27,12 +27,18 @@ article{
 .leftslider{
     grid-column: 1/2;
     grid-row: 6/7;
-    margin-left: 400px;
+    margin-left: 350px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    border:1px;
 }
 .rightslider{
     grid-column: 3/4;
     grid-row: 6/7;
-    margin-right: 400px;
+    margin-right: 350px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    border:1px;
 }
 footer{
     grid-column: 1/2;

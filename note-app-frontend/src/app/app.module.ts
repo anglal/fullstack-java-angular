@@ -13,13 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NoteformComponent } from './noteform/noteform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     NotesComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoteformComponent
   ],
   imports: [
     BrowserModule,

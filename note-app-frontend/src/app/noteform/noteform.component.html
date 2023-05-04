@@ -1,5 +1,8 @@
 <header>New Note</header>
-<form>
-    <input type = "text" placeholder="Enter Note title">
-    <input type = "text">
+<form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+    <input type = "text"  class = "title" placeholder="Enter Note title" formControlName="title">
+    <p>{{currentDate|date}}</p>
+    <textarea id="textarea" name="body" rows="15" formControlName="body"></textarea>
+    <mat-slide-toggle type = "button" formControlName="important">Important</mat-slide-toggle>
+    <button type ="submit">add note</button>
 </form>

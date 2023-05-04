@@ -1,0 +1,31 @@
+*{
+    /* border: 1px solid red; */
+    margin:0px;
+    padding:0px;
+}
+textarea{
+    resize: vertical;
+    margin-bottom: 10px;
+    
+    
+}
+header{
+    background-color: lightblue;
+    margin-bottom: 20px;
+    margin-right: 80%;
+}
+form{
+    display: grid;
+    background-color: lightpink;
+    padding:10px;
+}
+
+.title{
+    margin-bottom: 10px;
+}
+mat-slide-toggle{
+    margin-bottom: 10px;
+}
+button{
+    margin-right: 90%;
+}

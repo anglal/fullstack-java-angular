@@ -1,7 +1,9 @@
 
 <div class = "noteswrapper">
     <mat-label><h3 class = "searchbox">Search For Note</h3></mat-label>
+    <div class="newform">
     <router-outlet></router-outlet>
+    </div>
     <input type="search" class = "searchbox" matInput placeholder="Enter the title">
     <h3 class = "noteheader">All Notes</h3>
     <div *ngFor="let note of allNotes" class = "notecard">

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup,FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-noteform',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./noteform.component.css']
 })
 export class NoteformComponent {
+  currentDate = new Date();
+  noteForm = new FormGroup({
+    title: new FormControl(''),
+    body: new FormControl(''),
+    important: new FormControl('')
+  });
 
+  onSubmit(){
+    console.log(this.noteForm.value);
+    this.noteForm.reset();
+  }
 }

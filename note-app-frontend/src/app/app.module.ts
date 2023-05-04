@@ -5,6 +5,9 @@ import {MatButtonModule} from '@angular/material/button';
 
 import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -31,7 +34,9 @@ import { NoteformComponent } from './noteform/noteform.component';
     AppRoutingModule,
     MatSliderModule,
     HttpClientModule,
-    MatInputModule
+    MatInputModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,22 @@
+
+
+*{
+border:1px solid red;
+margin : 0;
+padding: 0;
+}
+.searchbox {
+    background-color: lightblue;
+    margin-bottom: 10px;
+}
+
+.noteheader{
+    background-color: lightblue;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.notecard{
+    background-color: rgb(228, 180, 188);
+    margin-bottom: 10px;
+}

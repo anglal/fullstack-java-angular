@@ -17,6 +17,7 @@ import noteappbackend.dto.Note;
 import noteappbackend.service.NoteService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/")
 public class NoteController {
 	private NoteService noteService;
@@ -39,7 +40,7 @@ public class NoteController {
 		}
 
 	}
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/notes")
 	public Note createNote(@RequestBody Note note) {
 		return this.noteService.createNote(note);

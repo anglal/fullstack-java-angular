@@ -10,11 +10,11 @@ export class NoteService {
 
   constructor(private http: HttpClient) { }
 
-  notes:any;
   readonly ROOT_URL = "http://localhost:8080/api";
 
-  public createNotes(){
-
+  public createNote(note: Note){
+    return this.http.post(this.ROOT_URL + "/notes", note);
+      // console.log("Note created: " + note);
   }
 
   public getNotes(){

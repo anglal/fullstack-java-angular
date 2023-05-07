@@ -34,8 +34,14 @@ public class NoteController {
 	@GetMapping("/notes/{id}")
 	private Note getNote(@PathVariable("id") int noteId) {
 		try {
-			return this.noteService.getNote(noteId);
+			
+			
+					Note note = this.noteService.getNote(noteId);
+			System.out.println(note);
+			return note;
 		} catch (NoSuchElementException e) {
+			
+			System.out.println("no note");
 			return null;
 		}
 

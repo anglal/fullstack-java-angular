@@ -1,8 +1,9 @@
 import { NoteService } from './../services/note.service';
-import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { Note } from '../model/notes';
+
+
 
 @Component({
   selector: 'app-noteform',
@@ -11,6 +12,10 @@ import { Note } from '../model/notes';
 })
 export class NoteformComponent {
   note:Note ={title:'', body:'', dateCreated:null, id:null, important:false};
+  
+  @Input()
+  hide = false;
+
   constructor(private noteService : NoteService){
 
   }
@@ -34,7 +39,7 @@ export class NoteformComponent {
     this.note.important = this.noteForm.value.important;
     this.note.dateCreated = this.currentDate;
     this.noteService.createNote(this.note).subscribe((res)=>{
-      console.log(res);
     });
   }
+
 }

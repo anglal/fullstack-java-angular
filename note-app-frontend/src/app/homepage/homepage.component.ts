@@ -46,7 +46,7 @@ export class HomepageComponent implements OnInit{
   private fetchNotes(){
       this.noteService.getNotes().subscribe((notes)=>{
       this.allNotes = notes;
-      console.log("Home" + this.allNotes);
+      // console.log("Home" + this.allNotes);
     })
   }
 }

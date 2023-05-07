@@ -1,7 +1,7 @@
 
 
 *{
-/* border:1px solid red; */
+border:1px solid red;
 margin : 0;
 padding: 0;
 }
@@ -34,9 +34,37 @@ padding: 0;
     background-color: rgb(228, 180, 188);
     margin-bottom: 10px;
     grid-column: 1/2;
+    padding-left: 10px;
 }
 
 .footer{
     grid-column:1/2;
     margin-right: 200px;
+}
+
+textarea{
+    resize: vertical;
+    margin-bottom: 10px;
+    
+    
+}
+header{
+    background-color: lightblue;
+    margin-bottom: 20px;
+    margin-right: 80%;
+}
+form{
+    display: grid;
+    background-color: lightpink;
+    padding:10px;
+}
+
+.title{
+    margin-bottom: 10px;
+}
+mat-slide-toggle{
+    margin-bottom: 10px;
+}
+button{
+    margin-right: 90%;
 }

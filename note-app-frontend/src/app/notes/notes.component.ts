@@ -18,6 +18,8 @@ export class NotesComponent implements OnInit{
   noteClickedVal= !false;
   note:Note ={title:'', body:'', dateCreated:null, id:null, important:false};
   newFormHide = true;
+  searchedNote:Note;
+  searchId;
 
  fetchNotes(){
     this.noteService.getNotes().subscribe(
@@ -27,7 +29,23 @@ export class NotesComponent implements OnInit{
     );
   
 }
-
+snoteClicked(snoteid:any){
+  console.log("snote clicked")
+  this.allNotes.forEach((note)=>{
+    if(note.id == snoteid){
+      console.log("Found snote")
+      console.log(note);
+      this.noteClickedVal = false;
+      this.newFormHide = true;
+      this.noteForm.setValue({title: note.title, body: note.body,important:note.important,id: note.id, dateCreated: note.dateCreated});
+      this.note.id = note.id;
+      this.note.body = note.body;
+      this.note.dateCreated = note.dateCreated;
+      this.note.important = note.important;
+      this.note.title = note.title;
+    }
+  })
+}
 
 noteClicked(id:any){
   this.allNotes.forEach((note)=>{
@@ -84,6 +102,20 @@ deleteNote(){
   this.noteClickedVal = true;
   //  Reload page
   window.location.reload();
+}
+
+searchClicked(searchid:string){
+  this.searchId = searchid;
+  console.log("Search id......" + searchid);
+  this.searchedNote = this.allNotes.find((note: Note)=>{
+    if(note.title == searchid){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  );
+  console.log("The searched object is " + this.searchedNote?.id + " " + this.searchedNote?.title + " " + this.searchedNote?.body);
 }
 
 }

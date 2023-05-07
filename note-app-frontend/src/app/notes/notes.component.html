@@ -4,7 +4,12 @@
     <div class="newform">
     <app-noteform [hide] = "newFormHide"></app-noteform>
     </div>
-    <input type="search" class = "searchbox" matInput placeholder="Enter the title">
+    <input type="search" class = "searchbox" matInput placeholder="Enter the title" #searchid><span (click)="searchClicked(searchid.value)">search</span>
+    <div class = "notecard" (click)="snoteClicked(snoteid.value)"> 
+        <input hidden value = {{searchedNote?.id}} #snoteid>
+        <p>{{searchedNote?.title}}</p><br>
+        <p>{{searchedNote?.dateCreated | date}}</p>
+    </div>
     <h3 class = "noteheader">All Notes</h3>
  
     <div *ngFor="let note of allNotes" class = "notecard" (click)="noteClicked(noteid.value)"> 

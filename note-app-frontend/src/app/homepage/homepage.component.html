@@ -12,7 +12,7 @@
     <footer>
         <p>Notes You've recently entered</p>
             <div *ngFor="let note of recentnotes">
-              <div><strong>{{note.title}}</strong><br> {{note.dateCreated |date}}</div><br><br> 
+              <div><strong>{{note?.title}}</strong><br> {{note?.dateCreated |date}}</div><br><br> 
         </div>
 
     </footer>

@@ -52,7 +52,7 @@ export class HomepageComponent implements OnInit{
       })
       this.allNotes.sort((a, b) => (a.dateCreated < b.dateCreated) ? 1 : -1);
       if(this.allNotes.length >= 4){
-        for( let i = 0; i <= 4; i++){
+        for( let i = 0; i <4; i++){
           this.recentnotes.push(this.allNotes[i]);
         }
       }else{

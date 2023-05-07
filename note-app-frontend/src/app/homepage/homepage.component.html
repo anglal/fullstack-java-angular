@@ -5,10 +5,15 @@
         <h2>{{importantnotes[noteIndex]?.title}}</h2><br>
         <p>{{importantnotes[noteIndex]?.dateCreated | date}}</p>
         <p>{{importantnotes[noteIndex]?.body}}</p>
+        <div *ngIf="importantNoteEmpty"><strong>There are no important notes entered yet.</strong></div>
         
     </article>
     <button class ="rightslider material-icons" (click)="rightClick()">arrow_forward_ios </button>
     <footer>
         <p>Notes You've recently entered</p>
+            <div *ngFor="let note of recentnotes">
+              <div><strong>{{note.title}}</strong><br> {{note.dateCreated |date}}</div><br><br> 
+        </div>
+
     </footer>
 </div>

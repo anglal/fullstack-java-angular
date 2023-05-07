@@ -19,9 +19,10 @@ export class HomepageComponent implements OnInit{
     this.fetchNotes();
   }
   noteIndex = 0;
-  
+  importantNoteEmpty = true;
   
   importantnotes:Note[]=[];
+  recentnotes:Note[]=[];
  
 
   leftClick(){
@@ -39,17 +40,28 @@ export class HomepageComponent implements OnInit{
     this.noteIndex++;
     }
   }
-
+  
   private fetchNotes(){
       this.noteService.getNotes().subscribe((notes)=>{
       this.allNotes = notes;
       this.allNotes.forEach((note)=>{
         if(note.important == true){
           this.importantnotes.push(note);
+          this.importantNoteEmpty = false;
         }
       })
-
+      this.allNotes.sort((a, b) => (a.dateCreated < b.dateCreated) ? 1 : -1);
+      if(this.allNotes.length >= 4){
+        for( let i = 0; i <= 4; i++){
+          this.recentnotes.push(this.allNotes[i]);
+        }
+      }else{
+        for( let i = 0; i <= this.allNotes.length; i++){
+          this.recentnotes.push(this.allNotes[i]);
+        }
+      }
     })
   }
 
+  
 }

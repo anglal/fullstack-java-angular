@@ -42,6 +42,13 @@ padding: 0;
     margin-right: 200px;
 }
 
+.footer:hover{
+    grid-column:1/2;
+    margin-right: 200px;
+    background-color:bisque;
+    box-shadow:blanchedalmond;
+}
+
 textarea{
     resize: vertical;
     margin-bottom: 10px;

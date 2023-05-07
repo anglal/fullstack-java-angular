@@ -31,6 +31,7 @@ export class NoteformComponent {
     this.saveNote();
     console.log("saved note: " + this.note.id + ", " + this.note.title + ", " + this.note.dateCreated + ", " + this.note.body + ", " + this.note.important);
     this.noteForm.reset();
+    window.location.reload();
   }
 
   private saveNote(){

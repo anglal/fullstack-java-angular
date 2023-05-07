@@ -10,19 +10,20 @@
     <div *ngFor="let note of allNotes" class = "notecard" (click)="noteClicked(noteid.value)"> 
         <input hidden value = {{note?.id}} #noteid>
         <p>{{note?.title}}</p><br>
-        <p>{{note?.dateCreated | date}}</p>
+        <p>{{note.dateCreated | date}}</p>
     </div>
 
-    <a mat-button routerLink="note" class = "navbutton footer" (click)="newNoteClicked()">new note</a>
+    <a mat-button class = "navbutton footer" (click)="newNoteClicked()">new note</a>
 
     <div class ="newform" [hidden] = "noteClickedVal" >
         <header>Selected Note</header>
         <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
             <input type = "text"  class = "title" placeholder="Enter Note title" formControlName="title">
-            <p>{{currentDate|date}}</p>
+            <input formControlName="dateCreated">
             <textarea id="textarea" name="body" rows="15" formControlName="body"></textarea>
             <mat-slide-toggle type = "button" formControlName="important">Important</mat-slide-toggle>
-            <button type ="submit">add note</button>
+            <button type ="submit">update</button>
+            <button type ="button" (click)="deleteNote()">delete</button>
         </form>
         </div>
 </div>

@@ -15,24 +15,8 @@ export class NoteService {
 
   public createNote(note: Note){
     return this.http.post(this.ROOT_URL + "/notes", note);
-      // console.log("Note created: " + note);
-  }
 
-  // public getNotes(){
-  //   return this.http
-  //     .get<{ [key: string]: Note }>(this.ROOT_URL + '/notes')
-  //     .pipe(
-  //       map((res) => {
-  //         const notes = [];
-  //         for (const key in res) {
-  //           if (res.hasOwnProperty(key)) {
-  //             notes.push({ ...res[key], id: key });
-  //           }
-  //         }
-  //         return notes;
-  //       })
-  //     );   
-  // }
+  }
 
   public getNotes():Observable<any>{
     
@@ -41,11 +25,19 @@ export class NoteService {
   }
 
   public deleteNote(id:number){
-
+    return this.http.delete(this.ROOT_URL+ "/notes/" + id);
+    // this.http.delete('https://jsonplaceholder.typicode.com/posts/1')
+    //     .subscribe(() => this.status = 'Delete successful');
   }
   
   public fetchNote(id:number): Observable<any> {
     console.log("Id sent with request: " + id)
     return this.http.get<Note>(this.ROOT_URL+ "/notes/" + id)
   }
+
+  public updateNote(note: Note, id: number){
+    this.http.patch(this.ROOT_URL + "/notes"+id, note);
+  }
+
+  
 }

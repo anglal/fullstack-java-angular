@@ -7,11 +7,7 @@ import { NoteformComponent } from './noteform/noteform.component';
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
-  { path: 'notes', component: NotesComponent ,
-  children:[
-    {path:'note', component : NoteformComponent}
-    
-  ]},
+  { path: 'notes', component: NotesComponent }
 ];
 
 @NgModule({

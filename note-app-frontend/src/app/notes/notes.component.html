@@ -1,11 +1,11 @@
 
 <div class = "noteswrapper">
-    <mat-label><h3 class = "searchbox">Search For Note</h3></mat-label>
+    <mat-label><h4 class = "searchbox">Search for a note</h4></mat-label>
     <div class="newform">
     <app-noteform [hide] = "newFormHide"></app-noteform>
     </div>
-    <input type="search" class = "searchbox" matInput placeholder="Enter the title" #searchid><span (click)="searchClicked(searchid.value)">search</span>
-    <div class = "notecard" (click)="snoteClicked(snoteid.value)"> 
+    <input type="search" class = "searchboxinput" matInput placeholder="Enter note title" #searchid><span ><button id = "searchbtn" (click)="searchClicked(searchid.value)">search</button></span>
+    <div [hidden] = "hideNote" id = "notecard1" (click)="snoteClicked(snoteid.value)"> 
         <input hidden value = {{searchedNote?.id}} #snoteid>
         <p>{{searchedNote?.title}}</p><br>
         <p>{{searchedNote?.dateCreated | date}}</p>

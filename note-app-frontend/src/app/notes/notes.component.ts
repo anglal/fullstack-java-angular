@@ -20,7 +20,7 @@ export class NotesComponent implements OnInit{
   newFormHide = true;
   searchedNote:Note;
   searchId;
-
+  hideNote =true;
  fetchNotes(){
     this.noteService.getNotes().subscribe(
       (notes) => {
@@ -109,9 +109,13 @@ searchClicked(searchid:string){
   console.log("Search id......" + searchid);
   this.searchedNote = this.allNotes.find((note: Note)=>{
     if(note.title == searchid){
+      this.hideNote = false;
       return true;
+      
     }else{
+      this.hideNote = true;
       return false;
+      
     }
   }
   );

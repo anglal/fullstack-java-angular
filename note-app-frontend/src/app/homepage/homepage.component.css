@@ -9,6 +9,12 @@
     grid-template-columns: 2fr 3fr 2fr;
     grid-template-rows: repeat(11,1fr);
 }
+.homepage header{
+    /* display:grid; */
+    grid-template-columns: 2fr 3fr 2fr;
+    /* grid-template-rows: repeat(11,1fr); */
+    margin-top : 10px;
+}
 header{
     grid-column: 2/3;
     grid-row: 1/2;

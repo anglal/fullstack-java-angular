@@ -1,8 +1,8 @@
 <div class = "homepage">
-    <header><h2>Important Notes Entered</h2></header>
+    <header><h4>Important Notes Entered</h4></header>
     <button class ="leftslider material-icons" (click)="leftClick()">arrow_back_ios</button>
     <article>
-        <h2>{{importantnotes[noteIndex]?.title}}</h2><br>
+        <h5>{{importantnotes[noteIndex]?.title}}</h5><br>
         <p>{{importantnotes[noteIndex]?.dateCreated | date}}</p>
         <p>{{importantnotes[noteIndex]?.body}}</p>
         <div *ngIf="importantNoteEmpty"><strong>There are no important notes entered yet.</strong></div>
